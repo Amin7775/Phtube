@@ -19,11 +19,10 @@ const createButtons = (details) => {
 
   details.forEach((category) => {
     const div = document.createElement("div");
-    div.classList = `btn bg-gray-200`;
+    div.classList = `btn bg-gray-200 active:bg-red-500 `;
 
     div.innerHTML = `
         <p>${category.category}</p>
-        <p>${category.category_id}</p>
       `;
     // console.log(category.category, "clicked")
     div.id = `${category.category_id}`;
@@ -42,11 +41,15 @@ const loadCategoryDetails = async (id = "1000") => {
 
   const categoryDetails = data.data;
   const result = categoryDetails;
-
+  
+    if(result == ''){
+        noDataPage();
+        return; }
   // timeCalculator(result)
 
   const cardContainer = document.getElementById("card-container");
   cardContainer.textContent = "";
+  
 
   result.forEach((detail) => {
     const div = document.createElement("div");
@@ -57,7 +60,7 @@ const loadCategoryDetails = async (id = "1000") => {
     div.innerHTML = `
         <div class="relative">
         <img class=" h-[200px] w-[375px]" src="${detail.thumbnail}" />
-        <p id="showTime" class="absolute text-[10px] bottom-3 bg-[#171717] text-white p-1 right-3">${
+        <p class="showTime absolute text-[10px] bottom-3 bg-[#171717] text-white p-1 right-3 ">${
           timeConvert.hours
         }hrs ${timeConvert.minutes} min ago</p>
         </div>
@@ -81,6 +84,7 @@ const loadCategoryDetails = async (id = "1000") => {
         </div>
         `;
 
+        
 
     cardContainer.appendChild(div);
   });
@@ -102,3 +106,25 @@ const timeCalculator = (result) => {
   // console.log(timeResult)
   return timeResult;
 };
+
+
+const noDataPage = () =>{
+    const errorPage = document.getElementById('error');
+    const cardContainer = document.getElementById('card-container')
+    cardContainer.textContent= "";
+    errorPage.textContent="";
+    console.log("Working on nodatapage")
+    const div = document.createElement('div');
+    div.innerHTML=`
+    <div class="h-[50vh] flex flex-col justify-center items-center gap-8" >
+    <img src="./image/Icon.png" alt="">
+    <h1 class="text-center text-3xl font-bold">Oops!! Sorry, There is no <br>content here</h1>
+    </div>
+    `
+    errorPage.appendChild(div)
+    // noDataPageCounter= true;
+    // return loadCategory();
+}
+
+// global function to stop noDataPage Repeat
+// const noDataPageCounter = false;
