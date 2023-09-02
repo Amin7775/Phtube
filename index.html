@@ -36,12 +36,12 @@
 </head>
 
 <body class="w-[90%] mx-auto">
-    <!-- navbar Start -->
-    <div class="navbar bg-base-100 mt-12 mb-8 flex flex-col gap-5 md:gap-0 lg:gap-0 md:flex-row lg:flex-row">
+    <!-- navbar Start -->   
+    <div class="navbar bg-base-100 mt-12 mb-8 flex flex-col gap-5 md:gap-0 lg:gap-0 md:flex-row lg:flex-row justify-center items-center">
         <div class="navbar-start">
-            <img class="w-64 md:w-52 lg:w-56" src="./image/Logo.png" alt="">
+            <img class="w-64 md:w-52 lg:w-52" src="./image/Logo.png" alt="">
         </div>
-        <div class="navbar-center md:flex-1 md:mx-auto  lg:pl-0 lg:flex-none">
+        <div class="navbar-center md:flex-1 md:mx-auto lg:mx-0  lg:pl-0 ">
             <a class="btn bg-btn-bg-color normal-case text-lg font-medium">Sort By View</a>
         </div>
         <div class="navbar-end">
@@ -50,6 +50,26 @@
             </a>
         </div>
     </div>
+    <!-- navbar Start -->
+    <hr class="w-full border-2 mb-8">
+    <main>
+        <!-- Dynamic Btn Section Start -->
+        <section>
+        <div id="btn-container" class="flex flex-row justify-center gap-5">
+
+        </div>
+        </section>
+ <!-- Dynamic Btn Section End -->
+ <!-- Card Section Start -->
+        <section class="my-10">
+            <div id="card-container" class="grid grid-cols-4 gap-5">
+
+            </div>
+        </section>
+ <!-- Card Section End -->
+
+    </main>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
