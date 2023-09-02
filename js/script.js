@@ -6,7 +6,7 @@ const loadCategory = async () => {
   );
   const data = await res.json();
   const details = data.data;
-//   console.log(details);
+  //   console.log(details);
   createButtons(details);
 };
 
@@ -34,7 +34,7 @@ const createButtons = (details) => {
 };
 
 const loadCategoryDetails = async (id = "1000") => {
-//   console.log(id, "load");
+  //   console.log(id, "load");
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${id}`
   );
@@ -43,23 +43,36 @@ const loadCategoryDetails = async (id = "1000") => {
   const categoryDetails = data.data;
   const result = categoryDetails;
 
+  // timeCalculator(result)
+
   const cardContainer = document.getElementById("card-container");
   cardContainer.textContent = "";
 
   result.forEach((detail) => {
     const div = document.createElement("div");
+    let timeConvert = timeCalculator(detail);
 
-    
-    div.classList = `card w-[400px] bg-base-100 border-2 border-gray-200 p-5 mx-auto`;
+    div.classList = `card w-[400px] bg-base-100 p-5 mx-auto`;
 
     div.innerHTML = `
+        <div class="relative">
         <img class=" h-[200px] w-[375px]" src="${detail.thumbnail}" />
+        <p id="showTime" class="absolute text-[10px] bottom-3 bg-[#171717] text-white p-1 right-3">${
+          timeConvert.hours
+        }hrs ${timeConvert.minutes} min ago</p>
+        </div>
         <div class="flex gap-3 mt-5">
-        <img class="w-10 h-10 rounded-full " src="${detail.authors[0].profile_picture}" />
+        <img class="w-10 h-10 rounded-full " src="${
+          detail.authors[0].profile_picture
+        }" />
         <div class="grid gap-2 text-sm font-medium">
         <h1 class="text-lg font-bold">${detail.title}</h1>
 
-            <p class="text-[#171717B2]">${detail.authors[0].profile_name} ${detail.authors[0]?.verified ? '<img class="inline" src="./image/verification.png" alt"verification image"/>' : ''}
+            <p class="text-[#171717B2]">${detail.authors[0].profile_name} ${
+      detail.authors[0]?.verified
+        ? '<img class="inline" src="./image/verification.png" alt"verification image"/>'
+        : ""
+    }
             
             <p class="text-[#171717B2]">${detail.others.views} Views</p>
             
@@ -68,8 +81,24 @@ const loadCategoryDetails = async (id = "1000") => {
         </div>
         `;
 
+
     cardContainer.appendChild(div);
   });
 };
 
 loadCategoryDetails();
+
+const timeCalculator = (result) => {
+  // console.log(result, "inside calculator")
+
+  let seconds = result.others?.posted_date;
+  let hour = Math.floor(seconds / 3600);
+  let minute = Math.floor((seconds % 3600) / 60);
+
+  const timeResult = {
+    hours: hour,
+    minutes: minute,
+  };
+  // console.log(timeResult)
+  return timeResult;
+};
