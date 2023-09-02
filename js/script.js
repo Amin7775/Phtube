@@ -44,7 +44,11 @@ const loadCategoryDetails = async (id = "1000") => {
   
     if(result == ''){
         noDataPage();
-        return; }
+    }else{
+        const errorPage = document.getElementById('error')
+        errorPage.textContent='';
+    }
+
   // timeCalculator(result)
 
   const cardContainer = document.getElementById("card-container");
