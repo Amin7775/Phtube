@@ -65,7 +65,7 @@ const loadCategoryDetails = async (id = "1000") => {
     const div = document.createElement("div");
     let timeConvert = timeCalculator(detail);
 
-    div.classList = `card w-[400px] bg-base-100 p-5 mx-auto`;
+    div.classList = `card w-full md:w-[345px] lg:w-[400px] bg-base-100 p-5 mx-auto`;
 
     div.innerHTML = `
         <div class="relative">
@@ -127,7 +127,7 @@ const noDataPage = () =>{
     console.log("Working on nodatapage")
     const div = document.createElement('div');
     div.innerHTML=`
-    <div class="h-[50vh] flex flex-col justify-center items-center gap-8" >
+    <div class="h-[50vh] flex flex-col justify-center items-center gap-8 mb-20" >
     <img src="./image/Icon.png" alt="">
     <h1 class="text-center text-3xl font-bold">Oops!! Sorry, There is no <br>content here</h1>
     </div>
