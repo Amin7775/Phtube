@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,46 @@
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Css Link -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- google fonts - inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'btn-bg-color': '#25252533',
+                        'btn-bg-active-color': '#FF1F3D',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    
+
+<body class="w-[90%] mx-auto">
+    <!-- navbar Start -->
+    <div class="navbar bg-base-100 mt-12 mb-8 flex flex-col gap-5 md:gap-0 lg:gap-0 md:flex-row lg:flex-row">
+        <div class="navbar-start">
+            <img class="w-64 md:w-52 lg:w-56" src="./image/Logo.png" alt="">
+        </div>
+        <div class="navbar-center md:flex-1 md:mx-auto  lg:pl-0 lg:flex-none">
+            <a class="btn bg-btn-bg-color normal-case text-lg font-medium">Sort By View</a>
+        </div>
+        <div class="navbar-end">
+            <a href="#" class="btn btn-ghost bg-btn-bg-active-color text-white text-lg font-medium mx-auto md:mx-0 lg:mx-0">
+                Blog
+            </a>
+        </div>
+    </div>
 </body>
+
 </html>
