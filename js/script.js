@@ -32,6 +32,7 @@ const createButtons = (details) => {
   });
 };
 
+
 const loadCategoryDetails = async (id = "1000") => {
   //   console.log(id, "load");
   const res = await fetch(
@@ -47,13 +48,18 @@ const loadCategoryDetails = async (id = "1000") => {
     }else{
         const errorPage = document.getElementById('error')
         errorPage.textContent='';
-    }
-
+    } 
   // timeCalculator(result)
 
   const cardContainer = document.getElementById("card-container");
   cardContainer.textContent = "";
-  
+ 
+//   //call sort
+//   document.getElementById('sort-by-view').addEventListener('click', function(){
+//     // sort();
+//     passId(result);
+//   })
+
 
   result.forEach((detail) => {
     const div = document.createElement("div");
@@ -89,9 +95,10 @@ const loadCategoryDetails = async (id = "1000") => {
         `;
 
         
-
+        
     cardContainer.appendChild(div);
   });
+//   passId(result);
 };
 
 loadCategoryDetails();
@@ -130,5 +137,23 @@ const noDataPage = () =>{
     // return loadCategory();
 }
 
-// global function to stop noDataPage Repeat
-// const noDataPageCounter = false;
+
+// function passId(result){
+//     console.log(result);
+//     result.sort((a,b)=>{
+//         const dataA= parseInt(a.others.views);
+//         const dataB= parseInt(b.others.views);
+//         return dataA - dataB;
+//     })
+//     console.log(sort)
+// }
+
+
+// function sort (result){
+    
+//     result.sort((a,b)=>{
+//         const dataA= parseInt(a.result.others.views);
+//         const dataB= parseInt(b.result.others.views);
+//         return dataA - dataB;
+//     })
+// }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ph Tube Blog</title>
+    <!-- Daisy Ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Css Link -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- google fonts - inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'btn-bg-color': '#25252533',
+                        'btn-bg-active-color': '#FF1F3D',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="w-[90%] mx-auto">
+    <!-- navbar Start -->
+    <div class="navbar bg-base-100 mt-12 mb-8 flex flex-row justify-between">
+        <div>
+            <img class="w-64 md:w-52 lg:w-52" src="../image/Logo.png" alt="">
+        </div>
+
+
+        <div>
+            <a href="../index.html"
+                class="btn btn-ghost bg-btn-bg-active-color text-white text-lg font-medium mx-auto md:mx-0 lg:mx-0">
+                Go Back
+            </a>
+        </div>
+    </div>
+    <hr class="w-full border-2 mb-8">
+    <main>
+        <h1 class="text-center text-4xl font-semibold">Blog Posts</h1>
+        <!-- blog section -->
+        <section class="my-12 grid grid-cols-1 gap-16">
+            <!-- question 1 -->
+            <div class="border-2 p-5 border-black">
+                <h1 class="text-2xl font-medium">1. Discuss the scope of var, let, and const</h1>
+                <hr class="border-black border-1 my-3">
+                <div class="text-xl">
+
+                    <p class="">In programming, scope is an area where variables stay. It defines where a variable can
+                        work or not.Their are 2 types of scope. Global and Local.</p>
+                    <br>
+                    <p>Var, let and const are 3 different types of variable declaration methods.They have their own
+                        scopes. among those 3, let and const are more similar to each other and more powerful than var.
+                        they are also preferred more than var</p>
+                    <br>
+                    <div class="flex flex-col md:flex-row lg:flex-row gap-2">
+
+                        <h3 class="whitespace-nowrap font-medium">var scope:</h3>
+                        <p class="flex-wrap">Var is a old declaration type of js which was used before es6 . <br><br>
+                            The variables which are declared using var can be used anywhere within the function. it
+                            means that if there is any function inside that another function and var is declared on the
+                            inside function , we can still use it on the outer function</p>
+                    </div>
+                </div>
+                <br>
+                <div class="flex flex-col md:flex-row lg:flex-row gap-2 text-xl">
+
+                    <h3 class="whitespace-nowrap font-medium">let and const scope:</h3>
+                    <p class="flex-wrap">Let and Const are new types of variable declarations. They were introduced in
+                        the ES6 Js update in 2015.<br><br>
+                        let and const are the block type scopes. They are only access-able when they are used inside the
+                        function they are declares. <br>
+                        For example, If they were declared inside a function and their is another function outside ,
+                        they cannot be used on the outside function. As a result they are more secure to use. Because of
+                        this feature, let and const is more preferred than the var .
+                    </p><br>
+                </div>
+            </div>
+
+            <!-- question 2 -->
+            <div class="border-2 p-5 border-black">
+                <h1 class="text-2xl font-medium">2. Tell us the use cases of null and undefined</h1>
+                <hr class="border-black border-1 my-3">
+                <div class="text-xl">
+
+                    <p class="">Null and Undefined represents two different meanings of a value and they have different uses</p>
+                    <br>
+                    <div class="flex flex-col md:flex-row lg:flex-row gap-2">
+
+                        <h3 class="whitespace-nowrap font-medium">Null :</h3>
+                        <p class="flex-wrap">Null is a type of value which shows up when when a variable or object has no value in it.Uses of it -  <br>
+                            1. We can assign a null is a variable when we are declaring it. it means that the variable will be declared with no value in the start. <br>
+                            2. To check if any value exists inside the object or variable.
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <div class="flex flex-col md:flex-row lg:flex-row text-xl">
+
+                    <h3 class="whitespace-nowrap font-medium">Undefined :</h3>
+                    <p class="flex-wrap">Undefined is shown when a value is absent from a variable or data is in uninitialized state. Its shows up when - <br>
+                        1. Function has no return. <br>
+                        2. Variable that is not initialized. <br>
+                        3. Property that does not exist. <br>
+                        4. Parameter that has not been passed. <br>
+                    </p><br>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="border-2 p-5 border-black">
+                <h1 class="text-2xl font-medium">3. What do you mean by REST API?</h1>
+                <hr class="border-black border-1 my-3">
+                <div class="text-xl">
+
+                    <p class="">REST means Representation State Transfer. It is used for designing network applications.</p>
+                    <p class="">Api means Application Programming Interface. An Api is a messenger that takes request and tells the system what to do and returns the response back to us.</p>
+                    <br>
+                    <p>So, with the combination Rest and APi , we get REST Api which is a type of service that uses the principles of REST and HTTP methods of API.</p>
+                    <br>
+                    <p>REST APIs are used to build web services and provide access to data and functions that are on the internet. They ofter comes as JSON formats and helps in web developments. It is currently getting popular because of its simplicity and its wide range of datas</p>
+                    <br>
+                    </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>
